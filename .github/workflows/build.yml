@@ -28,7 +28,8 @@ jobs:
         run: ./gradlew applyPatches
       - name: Build
         run: ./gradlew build
-      - uses: "actions/upload-artifact@v3"
+      - name: capture build artifacts
+        uses: actions/upload-artifact@v2
         with:
-          name: "folia"
-          path: "build/libs/*.jar"
+          name: Artifacts
+          path: build/libs/
